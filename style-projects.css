@@ -619,9 +619,9 @@ html{
   /* ——— FOOTER ——— */
 
   .full-width-image {
-   margin-top: 10px; 
+  margin-top: 0px;
   }
-  .footer-section {
+.footer-section {
     padding-top: 2rem;
     height: auto;
   }
@@ -632,6 +632,7 @@ html{
     align-items: center;
     gap: 1.5rem;
     padding: 0 1rem;
+    padding-bottom: 30px;
   }
 
   .footer-logo-title {
@@ -660,14 +661,12 @@ html{
 
   .footer-social-list {
     flex: 0 0 30%;
-    display: flex;
     flex-direction: column;
     align-items: flex-start;
   }
 
   .footer-social {
     display: flex;
-    flex-direction: row;
     align-items: center;
     gap: 0.5rem;
     font-size: 0.9rem;
@@ -681,14 +680,12 @@ html{
 
   .footer-link-list {
     flex: 0 0 70%;
-    display: flex;
     flex-direction: column;
     align-items: flex-start;
   }
 
   .footer-link {
     display: flex;
-    flex-direction: row;
     align-items: center;
     gap: 0.5rem;
     font-size: 0.9rem;

@@ -11,44 +11,52 @@
 
   <header class="header">
     <div class="container nav-bar">
+      <!-- Логотип -->
       <a href="index.html"><img src="logo.png" alt="Logo" class="logo"/></a>
-      <a href="index.html"><div class="site-name">Лозівська районна організація</div></a>
-      <nav class="nav-links">
-    <div class="nav-link"><a href="index.html">Головна</a></div>
-    <div class="nav-link"><a href="projects.html">Проєкти</a></div>
-    <div class="nav-link active">Новини</div>
-    <div class="nav-link"><a href="aboutas.html">Про нас</a></div>
-    <div class="nav-link"><a href="contacts.html">Контакти</a></div>
+      <!-- Назва поруч із логотипом -->
+      <a href="index.html"><div class="site-name">Лозівська районна<br>організація</div></a>
+      <!-- Кнопка-гамбургер (для мобільних) -->
+      <button type="button" class="menu-toggle" aria-label="Відкрити меню">
+        &#9776;
+      </button>
+      <!-- Навігація (за замовчуванням схована на мобільних) -->
+      <nav class="nav-links collapsed">
+        <div class="nav-link"><a href="index.html">Головна</a></div>
+        <div class="nav-link"><a href="projects.html">Проєкти</a></div>
+        <div class="nav-link active">Новини</div>
+        <div class="nav-link"><a href="aboutas.html">Про нас</a></div>
+        <div class="nav-link"><a href="contacts.html">Контакти</a></div>
       </nav>
     </div>
     
     <div class="header-content">
       <h1 class="main-title">НАШІ НОВИНИ</h1>
-    <div class="social-buttons">
-      <a href="https://www.instagram.com/redcross_lozova/" class="social-button" target="_blank">
-        <img src="inst.png" alt="Instagram icon"/>
+      <div class="social-buttons">
+        <a href="https://www.instagram.com/redcross_lozova/" class="social-button" target="_blank">
+          <img src="inst.png" alt="Instagram icon"/>
           INSTAGRAM
-      </a>
-      <a href="https://www.facebook.com/redcrosslozova/" class="social-button" target="_blank">
-        <img src="facebook.png" alt="Facebook icon"/>
+        </a>
+        <a href="https://www.facebook.com/redcrosslozova/" class="social-button" target="_blank">
+          <img src="facebook.png" alt="Facebook icon"/>
           FACEBOOK
-      </a>
-      <a href="https://t.me/RedCross_Lozova?fbclid=PAZXh0bgNhZW0CMTEAAafKvusxn8O8X8-Hi8qWFi5H-51TXJ2-iW9QiEwkT5vzL4tIcH5u9P_AFzBKEg_aem_qve2arvmfWmlfZeG_UaHVQ" class="social-button" target="_blank">
-        <img src="tg.png" alt="Telegram icon"/>
+        </a>
+        <a href="https://t.me/RedCross_Lozova" class="social-button" target="_blank">
+          <img src="tg.png" alt="Telegram icon"/>
           TELEGRAM
-      </a>
-    </div>
+        </a>
+      </div>
     </div>
   </header>
 
+    
+
+  <section class="news-section">
+      <h2 class="news-title">ВСІ ПОДІЇ</h2>
+    </div>
     <div class="floating-tabs">
       <button class="tab-button tab-red">Останній тиждень</button>
       <button class="tab-button tab-dark">Останній місяць</button>
       <button class="tab-button tab-light">Останні півроку</button>
-    </div>
-
-  <section class="news-section">
-      <h2 class="news-title">ВСІ ПОДІЇ</h2>
     </div>
     <div class="news-container">
     <div class="news-meta">
@@ -56,7 +64,7 @@
       <img src="data.png" alt="Календар" class="meta-icon"/>
         <span>08.05.2025</span>
     </div>
-    <div class="meta-item">
+    <div class="meta-item" id="hash">
       <img src="hashtags.png" alt="Хештеги" class="meta-icon"/>
         <span>#Міжнародний_день_ЧХ #Червоний_Хрест #ЧП #допомога #волонтерство</span>
     </div>
@@ -191,5 +199,23 @@
   </div>
 </div>
 
+
+<script>
+    const btnToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    // Початково меню сховане
+    navLinks.classList.add('collapsed');
+
+    btnToggle.addEventListener('click', () => {
+      if (navLinks.classList.contains('expanded')) {
+        navLinks.classList.remove('expanded');
+        navLinks.classList.add('collapsed');
+      } else {
+        navLinks.classList.remove('collapsed');
+        navLinks.classList.add('expanded');
+      }
+    });
+  </script>
 </body>
 </html>
