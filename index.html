@@ -10,25 +10,47 @@
 <body>
 
   <header class="header">
-    <div class="container nav-bar">
-      <a href="index.html"><img src="logo.png" alt="Logo" class="logo"/></a>
-      <a href="index.html"><div class="site-name">Лозівська районна організація</div></a>
-      <nav class="nav-links">
-        <div class="nav-link active">Головна</div>
-        <div class="nav-link"><a href="projects.html">Проєкти</a></div>
-        <div class="nav-link"><a href="news.html">Новини</a></div>
-        <div class="nav-link"><a href="aboutas.html">Про нас</a></div>
-        <div class="nav-link"><a href="contacts.html">Контакти</a></div>
-      </nav>
+  <div class="container nav-bar">
+    <!-- Логотип -->
+    <a href="index.html">
+      <img src="logo.png" alt="Logo" class="logo"/>
+    </a>
+
+    <!-- Назва поруч із логотипом -->
+    <a href="index.html">
+      <div class="site-name">Лозівська районна<br>організація</div>
+    </a>
+
+    <!-- Кнопка-гамбургер (показується тільки на мобільних) -->
+    <button type="button" class="menu-toggle" aria-label="Відкрити меню">
+      &#9776;
+    </button>
+
+    <!-- Пункти меню (спочатку у рядку, потім у випадаючому блоці) -->
+    <nav class="nav-links">
+      <div class="nav-link active">Головна</div>
+      <div class="nav-link"><a href="projects.html">Проєкти</a></div>
+      <div class="nav-link"><a href="news.html">Новини</a></div>
+      <div class="nav-link"><a href="aboutas.html">Про нас</a></div>
+      <div class="nav-link"><a href="contacts.html">Контакти</a></div>
+    </nav>
+  </div>
+
+  <div class="header-content">
+    <h1 class="main-title">
+      Товариство Червоного Хреста Лозівської районної організації
+    </h1>
+    <div class="main-buttons">
+      <a href="#go">
+        <button class="btn btn-primary">ПРИЄДНАТИСЯ</button>
+      </a>
+      <a href="aboutas.html">
+        <button class="btn btn-outline">ДЕТАЛЬНІШЕ</button>
+      </a>
     </div>
-    <div class="header-content">
-      <h1 class="main-title">Товариство Червоного Хреста Лозівської районної організації</h1>
-      <div class="main-buttons">
-        <a href="#go"><button class="btn btn-primary">ПРИЄДНАТИСЯ</button></a>
-        <a href="aboutas.html"><button class="btn btn-outline">ДЕТАЛЬНІШЕ</button></a>
-      </div>
-    </div>
-  </header>
+  </div>
+</header>
+
 
   <section class="news-section">
 
@@ -219,6 +241,29 @@
     </div>
   </div>
 </div>
+
+
+<script>
+  // Знаходимо кнопку та блок з пунктами меню
+  const btnToggle = document.querySelector('.menu-toggle');
+  const navLinks = document.querySelector('.nav-links');
+
+  // Початково ховаємо меню, якщо воно не має класу .expanded
+  if (!navLinks.classList.contains('expanded')) {
+    navLinks.classList.add('collapsed');
+  }
+
+  btnToggle.addEventListener('click', () => {
+    // Якщо меню розгорнуте — згорнути, і навпаки
+    if (navLinks.classList.contains('expanded')) {
+      navLinks.classList.remove('expanded');
+      navLinks.classList.add('collapsed');
+    } else {
+      navLinks.classList.remove('collapsed');
+      navLinks.classList.add('expanded');
+    }
+  });
+</script>
 
 </body>
 </html>
