@@ -11,9 +11,23 @@
 
   <header class="header">
     <div class="container nav-bar">
-      <a href="index.html"><img src="logo.png" alt="Logo" class="logo"/></a>
-      <a href="index.html"><div class="site-name">Лозівська районна організація</div></a>
-      <nav class="nav-links">
+      <!-- Логотип -->
+      <a href="index.html">
+        <img src="logo.png" alt="Logo" class="logo"/>
+      </a>
+
+      <!-- Назва поруч із логотипом -->
+      <a href="index.html">
+        <div class="site-name">Лозівська районна<br>організація</div>
+      </a>
+
+      <!-- Кнопка-гамбургер (відображається лише на мобільних) -->
+      <button type="button" class="menu-toggle" aria-label="Відкрити меню">
+        &#9776;
+      </button>
+
+      <!-- Пункти меню (додано клас collapsed) -->
+      <nav class="nav-links collapsed">
         <div class="nav-link"><a href="index.html">Головна</a></div>
         <div class="nav-link active">Проєкти</div>
         <div class="nav-link"><a href="news.html">Новини</a></div>
@@ -24,10 +38,10 @@
     
     <div class="header-content">
       <h1 class="main-title">НАШІ ПРОЄКТИ</h1>
-    <div class="search-area">
-      <input type="text" id="search" placeholder="Наприклад, заняття з пластиліну">
+      <div class="search-area">
+        <input type="text" id="search" placeholder="Наприклад, заняття з пластиліну">
         <img src="search_icon.png" alt="Іконка пошуку у пошуковому рядку" class="search-icon">
-    </div>
+      </div>
     </div>
   </header>
 
@@ -164,6 +178,22 @@
     </div>
   </div>
 </div>
+<script>
+  const btnToggle = document.querySelector('.menu-toggle');
+  const navLinks = document.querySelector('.nav-links');
 
+  // Початково меню має бути схованим
+  navLinks.classList.add('collapsed');
+
+  btnToggle.addEventListener('click', () => {
+    if (navLinks.classList.contains('expanded')) {
+      navLinks.classList.remove('expanded');
+      navLinks.classList.add('collapsed');
+    } else {
+      navLinks.classList.remove('collapsed');
+      navLinks.classList.add('expanded');
+    }
+  });
+</script>
 </body>
 </html>
