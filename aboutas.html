@@ -11,26 +11,32 @@
 
   <header class="header">
     <div class="container nav-bar">
+      <!-- Логотип -->
       <a href="index.html"><img src="logo.png" alt="Logo" class="logo"/></a>
-      <a href="index.html"><div class="site-name">Лозівська районна організація</div></a>
-      <nav class="nav-links">
-    <div class="nav-link"><a href="index.html">Головна</a></div>
-    <div class="nav-link"><a href="projects.html">Проєкти</a></div>
-    <div class="nav-link"><a href="news.html">Новини</a></div>
-    <div class="nav-link active">Про нас</div>
-    <div class="nav-link"><a href="contacts.html">Контакти</a></div>
+      <!-- Назва поруч із логотипом -->
+      <a href="index.html"><div class="site-name">Лозівська районна<br>організація</div></a>
+      <!-- Кнопка-гамбургер (для мобільних) -->
+      <button type="button" class="menu-toggle" aria-label="Відкрити меню">
+        &#9776;
+      </button>
+      <!-- Навігація (за замовчуванням схована на мобільних) -->
+      <nav class="nav-links collapsed">
+        <div class="nav-link"><a href="index.html">Головна</a></div>
+        <div class="nav-link"><a href="projects.html">Проєкти</a></div>
+        <div class="nav-link"><a href="news.html">Новини</a></div>
+        <div class="nav-link active"><a href="aboutas.html">Про нас</a></div>
+        <div class="nav-link"><a href="contacts.html">Контакти</a></div>
       </nav>
     </div>
     
-    <div class="header-content">
+     <div class="header-content">
       <h1 class="main-title">ПРО НАС</h1>
     <div class="social-button">
         ПРИЄДНУЙСЯ. ДІЙ. МРІЙ. ❤️
     </div>
     </div>
-    </div>
-
   </header>
+  <section class="content">
       <h2 class="section-title">ХТО МИ?</h2>
         <p class="section-paragraph">
           <b>Лозівська районна організація Товариства Червоного Хреста України</b>  — офіційна локальна гуманітарна структура, що об’єднує волонтерів, фахівців та всіх небайдужих мешканців задля спільної мети — допомоги тим, 
@@ -157,7 +163,7 @@
     <div class="arrow-shape red"></div>
     </div>
     </div>
-
+    </section>
     <div class="full-width-image">
       <img src="motivation.png" alt="Волонтерство">
     </div>
@@ -206,6 +212,26 @@
     </div>
   </div>
 </div>
+
+
+<script>
+    const btnToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    // Початково меню сховане
+    navLinks.classList.add('collapsed');
+
+    btnToggle.addEventListener('click', () => {
+      if (navLinks.classList.contains('expanded')) {
+        navLinks.classList.remove('expanded');
+        navLinks.classList.add('collapsed');
+      } else {
+        navLinks.classList.remove('collapsed');
+        navLinks.classList.add('expanded');
+      }
+    });
+  </script>
+
 
 </body>
 </html>
