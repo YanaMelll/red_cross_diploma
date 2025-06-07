@@ -784,6 +784,13 @@ html{
     margin-bottom: 10px;
   }
 
+  .news-text {
+
+  padding: 0 1rem;
+
+  }
+
+
   .btn-submit,
   .btn-google {
     width: 100%;

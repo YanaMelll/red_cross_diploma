@@ -538,6 +538,8 @@ html{
   }
 
   .activity{
+
+    padding: 0 1rem;
     padding-top: 30px;
   }
   .activity-description p {

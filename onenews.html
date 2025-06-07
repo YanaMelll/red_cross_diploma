@@ -9,38 +9,45 @@
 </head>
 <body>
 
-  <header class="header">
+ <header class="header">
     <div class="container nav-bar">
+      <!-- Логотип -->
       <a href="index.html"><img src="logo.png" alt="Logo" class="logo"/></a>
-      <a href="index.html"><div class="site-name">Лозівська районна організація</div></a>
-      <nav class="nav-links">
-    <div class="nav-link">Головна</div>
+      <!-- Назва поруч із логотипом -->
+      <a href="index.html"><div class="site-name">Лозівська районна<br>організація</div></a>
+      <!-- Кнопка-гамбургер (для мобільних) -->
+      <button type="button" class="menu-toggle" aria-label="Відкрити меню">
+        &#9776;
+      </button>
+      <!-- Навігація (за замовчуванням схована на мобільних) -->
+      <nav class="nav-links collapsed">
+        <div class="nav-link"><a href="index.html">Головна</a></div>
         <div class="nav-link"><a href="projects.html">Проєкти</a></div>
-        <div class="nav-link active"><a href="news.html">Новини</a></div>
+        <div class="nav-link active">Новини</div>
         <div class="nav-link"><a href="aboutas.html">Про нас</a></div>
         <div class="nav-link"><a href="contacts.html">Контакти</a></div>
       </nav>
     </div>
     
-     <div class="header-content">
+    <div class="header-content">
       <h1 class="main-title">НАШІ НОВИНИ</h1>
-    <div class="social-buttons">
-      <a href="https://www.instagram.com/redcross_lozova/" class="social-button" target="_blank">
-        <img src="inst.png" alt="Instagram icon"/>
+      <div class="social-buttons">
+        <a href="https://www.instagram.com/redcross_lozova/" class="social-button" target="_blank">
+          <img src="inst.png" alt="Instagram icon"/>
           INSTAGRAM
-      </a>
-      <a href="https://www.facebook.com/redcrosslozova/" class="social-button" target="_blank">
-        <img src="facebook.png" alt="Facebook icon"/>
+        </a>
+        <a href="https://www.facebook.com/redcrosslozova/" class="social-button" target="_blank">
+          <img src="facebook.png" alt="Facebook icon"/>
           FACEBOOK
-      </a>
-      <a href="https://t.me/RedCross_Lozova?fbclid=PAZXh0bgNhZW0CMTEAAafKvusxn8O8X8-Hi8qWFi5H-51TXJ2-iW9QiEwkT5vzL4tIcH5u9P_AFzBKEg_aem_qve2arvmfWmlfZeG_UaHVQ" class="social-button" target="_blank">
-        <img src="tg.png" alt="Telegram icon"/>
+        </a>
+        <a href="https://t.me/RedCross_Lozova" class="social-button" target="_blank">
+          <img src="tg.png" alt="Telegram icon"/>
           TELEGRAM
-      </a>
-    </div>
+        </a>
+      </div>
     </div>
   </header>
-
+<section class="news-section">
   <div class="breadcrumbs-container">
     <nav class="breadcrumbs">
       <a href="news.html">Новини</a> &gt;
@@ -97,7 +104,7 @@
     <div class="arrow-shape red"></div>
     </div>
     </div>
-
+  </section>
     <div class="full-width-image">
       <img src="motivation.png" alt="Волонтерство">
     </div>
@@ -146,6 +153,22 @@
     </div>
   </div>
 </div>
+<script>
+  const btnToggle = document.querySelector('.menu-toggle');
+  const navLinks = document.querySelector('.nav-links');
 
+  // Початково меню має бути схованим
+  navLinks.classList.add('collapsed');
+
+  btnToggle.addEventListener('click', () => {
+    if (navLinks.classList.contains('expanded')) {
+      navLinks.classList.remove('expanded');
+      navLinks.classList.add('collapsed');
+    } else {
+      navLinks.classList.remove('collapsed');
+      navLinks.classList.add('expanded');
+    }
+  });
+</script>
 </body>
 </html>

@@ -542,6 +542,7 @@ html{
   .header-content{
     margin-top: 30px;
     text-align: center;
+    width: 100%;
   }
 
 
@@ -556,7 +557,12 @@ html{
   }
 
   .red-banner {
-    margin-top: 1rem;
+    height: auto; /* дозволити блоку рости за висотою */
+    padding: 2rem 1rem; /* додати внутрішній відступ */
+  }
+  .info-icon {
+    width: 4.5rem;
+    height: 4.5rem;
   }
 
 
@@ -583,15 +589,31 @@ html{
     max-width: 300px;
     font-size: 1.2rem;
     padding: 0.5rem;
+     text-align: center;
+      display: block;
+      margin: 0 auto;
   }
 
   .principle-text {
+    margin-top: 10px;
     font-size: 1rem;
     line-height: 1.5;
   }
 
+  .info-blocks {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem; /* зменшення проміжків між блоками */
+  }
+   .info-block {
+    width: 100%; /* займати всю ширину контейнера */
+    max-width: 20rem; /* обмежити надто широке розтягнення */
+  }
 
 
+  .section-paragraph{
+    padding: 0 1rem;
+  }
   .full-width-image {
    margin-top: 10px; 
   }
